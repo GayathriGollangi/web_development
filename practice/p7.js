@@ -1,3 +1,4 @@
+// Write a JavaScript program using a switch statement to print the day of the week based on a given day abbreviation.
 let day = 'tue';
 switch(day){
     case "mon":
