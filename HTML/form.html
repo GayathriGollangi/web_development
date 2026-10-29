@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="firstName">firstName</label><br />
+      <input
+        type="text"
+        name="firstName"
+        placeholder="Enter your firstName"
+        required
+      /><br />
+      <label for="lastName">lastName</label><br />
+      <input
+        type="text"
+        name="lastName"
+        placeholder="Enter your lastName"
+        required
+      /><br />
+      <label for="email">Email</label><br />
+      <input
+        type="text"
+        name="email"
+        placeholder="Enter your email"
+        value="sam@gmail.com"
+        required
+      /><br />
+      <label for="password">password</label><br />
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter your password"
+        required
+      /><br />
+      <label for="email">select hobbies</label><br />
+      <input type="checkbox" name="dancing" value="dancing" >
+        Dancing
+    </input><br />
+    <input type="checkbox" name="swimming" value="swimming" >
+        swimming
+    </input><br />
+    <input type="checkbox" name="cricket" value="cricket" >
+        cricket
+    </input><br />
+    <label for="picture">Choose a profile picture:</label>
+
+<input type="file" id="picture" name="avatar" accept="image/png, image/jpeg" /> <br>
+        <label for="address">address</label>
+<textarea name="address" id="address"></textarea>    </form>
+<input type="date" value="2026-06-01" /><br>
+<label for="married">Married</label>
+ <input type="radio" id="yes" value="yes" />
+    <label for="yes">Yes</label>
+    <input type="radio" id="no" value="no" />
+    <label for="no">No</label>
+    <div>
+ <button>submit</button>
+ <button>reset</button>
+ </div>
+  </body>
+</html>
