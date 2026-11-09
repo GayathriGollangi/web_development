@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button example</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let body = document.querySelector("body");
+  //   let btn1 = document.createElement("button");
+  //   btn1.innerText = "Primary";
+  //   btn1.style.backgroundColor = "blue";
+  //   btn1.style.color = "white";
+  //   body.append(btn1);
+
+  let btnObj = [
+    {
+      textContent: "primary",
+      bgColor: "blue",
+      color: "white",
+    },
+    {
+      textContent: "success",
+      bgColor: "green",
+      color: "white",
+    },
+    {
+      textContent: "danger",
+      bgColor: "red",
+      color: "white",
+    },
+    {
+      textContent: "warning",
+      bgColor: "yellow",
+      color: "black",
+    },
+    {
+      textContent: "info",
+      bgColor: "skyblue",
+      color: "black",
+    },
+    {
+      textContent: "secondary",
+      bgColor: "gray",
+      color: "white",
+    },
+    {
+      textContent: "dark",
+      bgColor: "black",
+      color: "white",
+    },
+    {
+      textContent: "light",
+      bgColor: "lightgray",
+      color: "black",
+    },
+  ];
+
+  btnObj.map(function (element) {
+    let btn = document.createElement("button");
+    btn.textContent = element.textContent;
+    btn.style.backgroundColor = element.bgColor;
+    btn.style.color = element.color;
+    btn.style.height = "100px";
+    btn.style.width = "100px";
+    btn.style.margin = "10px";
+    body.append(btn);
+  });
+</script>
