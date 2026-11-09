@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container > div {
+        height: 100px;
+        width: 100px;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+  </body>
+</html>
+<script>
+  let boxes = document.querySelectorAll("#container>div");
+  boxes.forEach(function (ele) {
+    ele.addEventListener("click", getNumber);
+  });
+  function getNumber() {
+    console.log(event.target.innerText);
+    event.target.style.color = "red";
+    event.target.style.fontSize = "40px";
+  }
+</script>
