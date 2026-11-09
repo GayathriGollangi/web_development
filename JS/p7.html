@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>classname</title>
+  </head>
+  <body>
+    <h1>heading</h1>
+    <p class="para">para 1</p>
+    <p class="para">para 2</p>
+    <p class="para">para 1</p>
+  </body>
+</html>
+<script>
+  let classCollection = document.getElementsByClassName("para");
+  for (let i = 0; i < classCollection.length; i++) {
+    console.log(classCollection[i]);
+  }
+  console.log(classCollection);
+</script>
