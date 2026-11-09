@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div>
+      <form id="fomTag">
+        <label>Item name</label><br />
+        <input type="text" id="name" placeholder="Enter item name" /><br />
+        <label>Quantity</label><br />
+        <input
+          type="number"
+          id="quantity"
+          placeholder="Enter item Quantity"
+        /><br />
+        <label>Priority</label><br />
+        <select id="priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option></select
+        ><br />
+        <input type="submit" id="submit" />
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Item name</th>
+            <th>Item Quantity</th>
+            <th>priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- implemented using JS -->
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+<script src="./index.js"></script>

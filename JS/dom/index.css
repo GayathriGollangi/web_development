@@ -1,0 +1,49 @@
+div {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+form {
+  border: 1px solid black;
+  width: 30%;
+  padding: 30px;
+}
+label {
+  font-size: 20px;
+}
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+input[type="submit"] {
+  background-color: salmon;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+}
+table {
+  width: 60%;
+  border-collapse: collapse;
+  text-align: center;
+}
+table td,
+table th {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+table th {
+  font-size: 20px;
+  background-color: salmon;
+  color: white;
+  padding: 10px;
+}
