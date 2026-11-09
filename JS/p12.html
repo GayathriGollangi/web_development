@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Enter</title>
+    <style>
+      div {
+        height: 100px;
+        width: 100px;
+        background-color: cadetblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <button>click</button>
+  </body>
+</html>
+<script>
+  document.querySelector("div").addEventListener("mouseenter", changeBg);
+  function changeBg() {
+    document.querySelector("div").style.backgroundColor = "salmon";
+  }
+  document.querySelector("div").addEventListener("mouseleave", resetBg);
+  function resetBg() {
+    document.querySelector("div").style.backgroundColor = "cadetblue";
+  }
+  document.querySelector("button").addEventListener("dblclick", dbFunc);
+  function dbFunc() {
+    console.log("clicked");
+  }
+</script>
