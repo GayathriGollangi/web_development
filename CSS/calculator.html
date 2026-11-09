@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+    <style>
+      #calculator {
+        font-size: 25px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #display {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        width: 40%;
+        height: 50px;
+      }
+      #key {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 50%;
+        text-align: center;
+      }
+      #key > div {
+        width: 50px;
+        height: 50px;
+        /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        margin: 10px;
+        padding: 5px;
+      }
+      #key > div:hover {
+        background-color: teal;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="calculator">
+      <h1>calculator</h1>
+      <div id="display"></div>
+      <div id="key">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div class="black">+</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div class="black">-</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div class="black">*</div>
+        <div class="black">AC</div>
+        <div>0</div>
+        <div class="black">=</div>
+        <div class="black">/</div>
+      </div>
+    </section>
+  </body>
+</html>
