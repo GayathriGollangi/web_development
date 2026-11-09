@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let body = document.querySelector("body");
+  let parentContainer = document.createElement("div");
+  parentContainer.setAttribute("id", "container");
+  let div1 = document.createElement("div");
+  div1.innerText = "div1";
+  let div2 = document.createElement("div");
+  div2.innerText = "div2";
+
+  let div3 = document.createElement("div");
+  div3.innerText = "div3";
+
+  parentContainer.append(div1, div2, div3);
+  body.append(parentContainer);
+</script>
