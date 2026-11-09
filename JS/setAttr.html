@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setAttribute</title>
+    <style>
+      .g-image {
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
+<script>
+  let body = document.querySelector("body");
+  let imageEle = document.createElement("img");
+  imageEle.setAttribute(
+    "src",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOJ4IZbkwwyJD4dq7MObC7x1gpYN0xVkTOV_X9T9ZCMQ&s=10",
+  );
+  imageEle.setAttribute("class", "g-image");
+  imageEle.setAttribute("alt", "image");
+  body.append(imageEle);
+</script>

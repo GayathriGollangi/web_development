@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create Element</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let body = document.querySelector("body");
+  let heading = document.createElement("h1");
+  heading.innerText = "Welcome";
+  body.append(heading);
+  let paragraph = document.createElement("p");
+  paragraph.innerText = "Welcome to JS";
+  body.append(paragraph);
+</script>
