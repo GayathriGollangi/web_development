@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav>
+      <div><a href="./home.html">Home</a></div>
+      <div><a href="./application.html">Applied jobs</a></div>
+      <div><a href="./bookmarks.html">bookmarks</a></div>
+    </nav>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Person Name</th>
+          <th>Person Email</th>
+          <th>Person Role</th>
+          <th>Person salary</th>
+          <th>BookMark</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>
+<script>
+  let data = JSON.parse(localStorage.getItem("jobList"));
+  let body = document.querySelector("body");
+
+  let bookmarkArr = JSON.parse(localStorage.getItem("bookmarks")) || [];
+
+  if (!Array.isArray(bookmarkArr)) {
+    bookmarkArr = [bookmarkArr];
+  }
+  data.forEach((element) => {
+    let tr = document.createElement("tr");
+
+    let td1 = document.createElement("td");
+    td1.innerText = element.personName;
+
+    let td2 = document.createElement("td");
+    td2.innerText = element.personEmail;
+
+    let td3 = document.createElement("td");
+    td3.innerText = element.personRole;
+
+    let td4 = document.createElement("td");
+    td4.innerText = element.personSalary;
+
+    let td5 = document.createElement("td");
+    td5.innerText = "add to Bookmark";
+    td5.addEventListener("click", function () {
+      bookMarkFunc(element);
+    });
+
+    tr.append(td1, td2, td3, td4, td5);
+
+    document.querySelector("tbody").append(tr);
+  });
+  function bookMarkFunc(element) {
+    bookmarkArr.push(element);
+
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarkArr));
+  }
+</script>
