@@ -18,10 +18,6 @@
       <option value="asc">ASC</option>
       <option value="dsc">DSC</option>
     </select>
-<<<<<<< HEAD
-=======
-
->>>>>>> 69e0ccb (Added sorting functionality by salary, name, and role)
     <!-- sort by salary -->
     <select id="sortSalary" onchange="handleSalary()">
       <option value="">Sort by salary</option>
@@ -122,35 +118,7 @@
   if (!Array.isArray(bookmarkArr)) {
     bookmarkArr = [bookmarkArr];
   }
-<<<<<<< HEAD
-  // data.forEach((element) => {
-  //   let tr = document.createElement("tr");
 
-  //   let td1 = document.createElement("td");
-  //   td1.innerText = element.personName;
-
-  //   let td2 = document.createElement("td");
-  //   td2.innerText = element.personEmail;
-
-  //   let td3 = document.createElement("td");
-  //   td3.innerText = element.personRole;
-
-  //   let td4 = document.createElement("td");
-  //   td4.innerText = element.personSalary;
-
-  //   let td5 = document.createElement("td");
-  //   td5.innerText = "add to Bookmark";
-  //   td5.addEventListener("click", function () {
-  //     bookMarkFunc(element);
-  //   });
-
-  //   tr.append(td1, td2, td3, td4, td5);
-
-  //   document.querySelector("tbody").append(tr);
-  // });
-=======
-
->>>>>>> 69e0ccb (Added sorting functionality by salary, name, and role)
   function bookMarkFunc(element) {
     bookmarkArr.push(element);
 
