@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stop watch</title>
+  </head>
+  <body>
+    <h1 id="timer">0</h1>
+    <button onclick="startWatch()">Start</button>
+    <button onclick="stopWatch()">Stop</button>
+  </body>
+</html>
+<script>
+  let id;
+  let i = 0;
+  function startWatch() {
+    id = setInterval(function () {
+      console.log(i);
+      i++;
+
+      document.querySelector("#timer").innerHTML = i;
+    }, 1000);
+  }
+  function stopWatch() {
+    clearInterval(id);
+  }
+</script>
