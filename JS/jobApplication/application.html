@@ -12,6 +12,26 @@
       <div><a href="./application.html">Applied jobs</a></div>
       <div><a href="./bookmarks.html">bookmarks</a></div>
     </nav>
+    <!-- sort by name -->
+    <select id="sortName" onchange="handleNames()">
+      <option value="">sort by name</option>
+      <option value="asc">ASC</option>
+      <option value="dsc">DSC</option>
+    </select>
+    <!-- sort by salary -->
+    <select id="sortSalary" onchange="handleSalary()">
+      <option value="">Sort by salary</option>
+      <option value="LTH">Low to High</option>
+      <option value="HTL">High to Low</option>
+    </select>
+
+    <!-- sort by role -->
+    <select id="sortRole" onchange="handleRole()">
+      <option value="">Sort by Role</option>
+      <option value="frontend">Frontend</option>
+      <option value="backend">Backend</option>
+      <option value="fullstack">Full Stack</option>
+    </select>
 
     <table border="1">
       <thead>
@@ -32,38 +52,141 @@
   let body = document.querySelector("body");
 
   let bookmarkArr = JSON.parse(localStorage.getItem("bookmarks")) || [];
+  displayData(data);
+  function displayData(data) {
+    document.querySelector("tbody").innerHTML = "";
+
+    data.forEach((element) => {
+      let tr = document.createElement("tr");
+
+      let td1 = document.createElement("td");
+      td1.innerText = element.personName;
+
+      let td2 = document.createElement("td");
+      td2.innerText = element.personEmail;
+
+      let td3 = document.createElement("td");
+      td3.innerText = element.personRole;
+
+      let td4 = document.createElement("td");
+      td4.innerText = element.personSalary;
+
+      let td5 = document.createElement("td");
+      td5.innerText = "add to Bookmark";
+      td5.addEventListener("click", function () {
+        bookMarkFunc(element);
+      });
+
+      tr.append(td1, td2, td3, td4, td5);
+
+      document.querySelector("tbody").append(tr);
+    });
+  }
 
   if (!Array.isArray(bookmarkArr)) {
     bookmarkArr = [bookmarkArr];
   }
-  data.forEach((element) => {
-    let tr = document.createElement("tr");
+  // data.forEach((element) => {
+  //   let tr = document.createElement("tr");
 
-    let td1 = document.createElement("td");
-    td1.innerText = element.personName;
+  //   let td1 = document.createElement("td");
+  //   td1.innerText = element.personName;
 
-    let td2 = document.createElement("td");
-    td2.innerText = element.personEmail;
+  //   let td2 = document.createElement("td");
+  //   td2.innerText = element.personEmail;
 
-    let td3 = document.createElement("td");
-    td3.innerText = element.personRole;
+  //   let td3 = document.createElement("td");
+  //   td3.innerText = element.personRole;
 
-    let td4 = document.createElement("td");
-    td4.innerText = element.personSalary;
+  //   let td4 = document.createElement("td");
+  //   td4.innerText = element.personSalary;
 
-    let td5 = document.createElement("td");
-    td5.innerText = "add to Bookmark";
-    td5.addEventListener("click", function () {
-      bookMarkFunc(element);
-    });
+  //   let td5 = document.createElement("td");
+  //   td5.innerText = "add to Bookmark";
+  //   td5.addEventListener("click", function () {
+  //     bookMarkFunc(element);
+  //   });
 
-    tr.append(td1, td2, td3, td4, td5);
+  //   tr.append(td1, td2, td3, td4, td5);
 
-    document.querySelector("tbody").append(tr);
-  });
+  //   document.querySelector("tbody").append(tr);
+  // });
   function bookMarkFunc(element) {
     bookmarkArr.push(element);
 
     localStorage.setItem("bookmarks", JSON.stringify(bookmarkArr));
+  }
+
+  // handle role
+
+  function handleRole() {
+    let selectedValue = document.querySelector("#sortRole").value;
+    console.log(selectedValue);
+    let filteredArr = data.filter(function (element) {
+      if (element.personRole === selectedValue) {
+        return true;
+      }
+    });
+    document.querySelector("tbody").innerHTML = "";
+
+    console.log(filteredArr);
+    displayData(filteredArr);
+  }
+
+  //handle salary
+  function handleSalary() {
+    let selectedValue = document.querySelector("#sortSalary").value;
+    if (selectedValue === "HTL") {
+      data.sort(function (a, b) {
+        return b.personSalary - a.personSalary;
+      });
+
+      displayData(data);
+    }
+    if (selectedValue === "LTH") {
+      data.sort(function (a, b) {
+        return a.personSalary - b.personSalary;
+      });
+
+      displayData(data);
+    }
+  }
+
+  //handle name
+  function handleNames() {
+    let selectedValue = document.querySelector("#sortName").value;
+    console.log(selectedValue);
+    if (selectedValue === "asc") {
+      data.sort((a, b) => {
+        const nameA = a.personName.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.personName.toUpperCase(); // ignore upper and lowercase
+        if (nameA > nameB) {
+          return 1;
+        }
+        if (nameA < nameB) {
+          return -1;
+        }
+
+        // names must be equal
+        return 0;
+      });
+      displayData(data);
+    }
+    if (selectedValue === "dsc") {
+      data.sort((a, b) => {
+        const nameA = a.personName.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.personName.toUpperCase(); // ignore upper and lowercase
+        if (nameA > nameB) {
+          return -1;
+        }
+        if (nameA < nameB) {
+          return 1;
+        }
+
+        // names must be equal
+        return 0;
+      });
+      displayData(data);
+    }
   }
 </script>
