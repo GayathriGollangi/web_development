@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch data from API</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+      }
+      img {
+        height: 100px;
+        width: 100px;
+      }
+      #container > div {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+</html>
+<script>
+  async function dataFetching() {
+    try {
+      let response = await fetch("https://fakestoreapi.com/products");
+      let data = await response.json();
+      //to convert json data into object data
+
+      console.log(data);
+      //adding to DOM
+      let container = document.querySelector("#container");
+      data.map(function (ele) {
+        let divEle = document.createElement("div");
+        let imgEle = document.createElement("img");
+        imgEle.src = ele.image;
+        let heading = document.createElement("h2");
+        heading.innerText = ele.title;
+        let para1 = document.createElement("p");
+        para1.innerText = ele.category;
+        let para2 = document.createElement("p");
+        para2.innerText = ele.price;
+
+        divEle.append(imgEle, heading, para1, para2);
+        container.append(divEle);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  dataFetching();
+</script>
