@@ -20,6 +20,7 @@
           <th>Person Email</th>
           <th>Person Role</th>
           <th>Person salary</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -27,12 +28,11 @@
   </body>
 </html>
 <script>
-  //   let data = JSON.parse(localStorage.getItem("bookmarks"));
   let data = JSON.parse(localStorage.getItem("bookmarks")) || [];
 
   let body = document.querySelector("body");
 
-  data.forEach((element) => {
+  data.forEach((element, index) => {
     let tr = document.createElement("tr");
 
     let td1 = document.createElement("td");
@@ -46,8 +46,26 @@
 
     let td4 = document.createElement("td");
     td4.innerText = element.personSalary;
-    tr.append(td1, td2, td3, td4);
+
+    let td5 = document.createElement("td");
+    td5.innerText = "Delete";
+
+    td5.addEventListener("click", function () {
+      deleteBookmark(element, index);
+    });
+
+    tr.append(td1, td2, td3, td4, td5);
 
     document.querySelector("tbody").append(tr);
   });
+  // Delete bookmark
+  function deleteBookmark(element, index) {
+    console.log("Bookmark deleted");
+    //deleting the data
+    data.splice(index, 1);
+    //updating the localstorage
+    localStorage.setItem("bookmarks", JSON.stringify(data));
+    //reload the page to get new data
+    window.location.reload();
+  }
 </script>
