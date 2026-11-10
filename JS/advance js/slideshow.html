@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slideshow</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop</button>
+  </body>
+</html>
+<script>
+  let images = [
+    "https://d3qfckz638r0o0.cloudfront.net/unsafe/960x0/filters:format(webp)/10126/1920x1080_BheemlaNayak_10126_19fef85e-d329-438a-ba87-62975216d4cf.jpg",
+    "https://d3qfckz638r0o0.cloudfront.net/unsafe/960x0/filters:format(webp)/10124/1920x1080_Sardar_10124_db3fa534-965b-46ac-8c6c-846bc2cb2794.jpg",
+    "https://d3qfckz638r0o0.cloudfront.net/unsafe/960x0/filters:format(webp)/10153/1920x1080_KRamp_10153_4e91996d-0b85-47bb-a3b9-67afcde89e3d.jpg",
+    "https://d3qfckz638r0o0.cloudfront.net/unsafe/960x0/filters:format(webp)/10597/1920x1080_Anandalahari_10597_09d005b4-1da5-403a-af02-ff406f3353c4.jpg",
+    "https://d3qfckz638r0o0.cloudfront.net/unsafe/960x0/filters:format(webp)/12961/1920x1080_Krack_12961_60e606d5-4759-4733-91fc-f4e69146895f.jpg",
+  ];
+
+  let divEle = document.querySelector("#container");
+  let imgEle = document.createElement("img");
+
+  let id;
+
+  function start() {
+    let i = 0;
+    // document.querySelector("#container") = "";
+    divEle.value = "";
+    id = setInterval(function () {
+      if (i == images.length) {
+        i = 0;
+      }
+      imgEle.src = images[i++];
+      divEle.append(imgEle);
+    }, 2000);
+  }
+
+  function stop() {
+    clearInterval(id);
+  }
+</script>
