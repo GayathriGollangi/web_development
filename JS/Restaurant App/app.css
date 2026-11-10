@@ -1,0 +1,63 @@
+#app {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+label {
+  font-size: 25px;
+  font-weight: bold;
+}
+input[type="text"] {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  transition: 0.3s;
+}
+
+/* When user clicks inside the input */
+input[type="text"]:focus {
+  border-color: teal;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 128, 128, 0.3);
+}
+
+/* Placeholder styling */
+input[type="text"]::placeholder {
+  color: #999;
+  font-size: 14px;
+}
+
+#table-section,
+#menu-section {
+  width: 40%;
+}
+
+#tablecontainer,
+#menucontainer {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  max-height: 500px;
+}
+
+.table-card,
+.menu-items {
+  border: 1px solid #ddd;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.table-card:hover,
+.menu-items:hover {
+  background-color: #f1f1f1;
+}

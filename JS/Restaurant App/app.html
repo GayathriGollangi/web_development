@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant App</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div id="app">
+        <!-- table section -->
+      <div id="table-section">
+        <label>Table</label><br />
+        <input
+          type="text"
+          id="table-search"
+          placeholder="search by table name"
+          onchange="filterTable()"
+        /><br />
+        <div id="tablecontainer"></div>
+      </div>
+<!-- menu section -->
+      <div id="menu-section">
+        <label>Menu</label><br />
+        <input
+          type="text"
+          id="menu-search"
+          placeholder="search by item name or course"
+          onchange="filerMenu()"
+        /><br />
+        <div id="menucontainer"></div>
+      </div>
+<!-- modal section -->
+      <div id="order-modal" class="modal">
+<div class="modal-content">
+<span>&times ;< /span>
+<div id="modal-body"></div>
+</div>
+
+I
+    </div>
+  </body>
+</html>
+<script src="./app.js"></script>
