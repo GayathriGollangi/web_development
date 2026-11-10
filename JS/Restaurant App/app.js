@@ -1,13 +1,18 @@
 const tables = [
-  { id: 1, name: "table-1", total: 0, items: {} },
-  { id: 2, name: "table-2", total: 0, items: {} },
-  { id: 3, name: "table-3", total: 0, items: {} },
+  { id: "table1", name: "table-1", total: 0, items: {} },
+  { id: "table2", name: "table-2", total: 0, items: {} },
+  { id: "table3", name: "table-3", total: 0, items: {} },
 ];
 
 const menuItems = [
-  { id: 1, name: "Biryani", price: 250, course: "main course" },
-  { id: 2, name: "Paneer Butter Masala", price: 200, course: "main course" },
-  { id: 3, name: "Ice Cream", price: 100, course: "dessert" },
+  { id: "item1", name: "Biryani", price: 250, course: "main course" },
+  {
+    id: "item2",
+    name: "Paneer Butter Masala",
+    price: 200,
+    course: "main course",
+  },
+  { id: "item3", name: "Ice Cream", price: 100, course: "dessert" },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -29,9 +34,11 @@ function renderMenuItems() {
 
     menuItem.className = "menu-items";
     menuItem.draggable = true;
+    menuItem.dataset.name = item.name;
     menuItem.append(itemName, itemPrice);
 
     menuContainer.append(menuItem);
+    menuItem.addEventListener("dragstart", dragstart);
   });
 }
 
@@ -54,5 +61,25 @@ function renderTable() {
     tableCard.append(tableName, tableTotal, tableItems);
 
     tableContainer.append(tableCard);
+    tableCard.addEventListener("dragover", dragover);
+    tableCard.addEventListener("drop", dropItem);
   });
+}
+
+function dragstart(e) {
+  e.dataTransfer.setData("text/plain", e.target.id);
+}
+
+function dragover(e) {
+  e.preventDefault(); // allow drop
+}
+
+function dropItem(e) {
+  console.log("dropped");
+  e.preventDefault();
+  const itemId = e.dataTransfer.getData("text");
+  const itemElement = document.getElementById(itemId);
+  const itemName = itemElement.dataset.name;
+  const itemPrice = parseFloat(itemElement.dataset.price);
+  const tableId = e.target.id;
 }
