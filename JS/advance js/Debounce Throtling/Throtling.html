@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Throtling</title>
+  </head>
+  <body>
+    <input type="text" id="input" />
+  </body>
+</html>
+<script>
+  let input = document.querySelector("#input");
+  let lastCall = 0;
+
+  input.addEventListener("keyup", function () {
+    let now = Date.now();
+
+    if (now - lastCall >= 2000) {
+      console.log("searching: ", input.value);
+      lastCall = now;
+    }
+  });
+</script>
