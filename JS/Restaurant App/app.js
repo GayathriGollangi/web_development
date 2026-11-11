@@ -19,12 +19,12 @@ const menuItems = [
 
 // event triggers when DOM renders
 document.addEventListener("DOMContentLoaded", () => {
-  renderTable(); //renderTable
-  renderMenuItems(); //render menu
+  renderTable(tables); //renderTable
+  renderMenuItems(menuItems); //render menu
 });
 
 // render menu data
-function renderMenuItems() {
+function renderMenuItems(menuItems) {
   let menuContainer = document.querySelector("#menucontainer");
   //replace the existing data
   menuContainer.innerHTML = "";
@@ -65,7 +65,7 @@ function renderMenuItems() {
   });
 }
 
-function renderTable() {
+function renderTable(tables) {
   let tableContainer = document.querySelector("#tablecontainer");
 
   //make the container empty better for search results
@@ -116,7 +116,7 @@ function showOrderDetails(tableId) {
       <input type="number" value="${item.quantity}" min=0 onchange="updateItemQuantity('${tableId}','${itemName}',this.value)"/>
       x $ ${itemPrice.toFixed(2)}
       </p>
-           <button onclick="deleteItem(${tableId},${itemName})">Remove</button>
+           <button onclick="deleteItem('${tableId}','${itemName}')">Remove</button>
       </div>
     `;
   }); //[biryani,pizza]
@@ -208,4 +208,48 @@ function updateItemQuantity(tableId, itemName, newQuantity) {
     //update modal
     showOrderDetails(tableId);
   }
+}
+
+//deleting item from popup
+function deleteItem(tableId, itemName) {
+  const table = tables.find((table) => table.id === tableId);
+
+  if (table.items[itemName]) {
+    const item = table.items[itemName];
+    table.total -= item.quantity * item.price;
+    delete table.items[itemName];
+  }
+  // update UI
+  const tableCard = document.getElementById(tableId);
+  tableCard.querySelector("p").textContent = `
+      Total:$${table.total.toFixed(2)}
+    `;
+
+  tableCard.querySelector("p:nth-of-type(2)").textContent =
+    `Items:${Object.values(table.items).reduce((a, b) => a + b.quantity, 0)}`;
+
+  //update modal
+  showOrderDetails(tableId);
+}
+
+function filterTable() {
+  const searchText = document
+    .getElementById("table-search")
+    .value.toLowerCase();
+
+  const filteredTables = tables.filter((table) =>
+    table.name.toLowerCase().includes(searchText),
+  );
+
+  renderTable(filteredTables);
+}
+
+function filterMenu() {
+  const searchText = document.getElementById("menu-search").value.toLowerCase();
+
+  const filteredMenu = menuItems.filter((item) =>
+    item.name.toLowerCase().includes(searchText),
+  );
+  // );
+  renderMenuItems(filteredMenu);
 }
