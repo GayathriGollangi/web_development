@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debouncing</title>
+  </head>
+  <body>
+    <input type="text" id="input" />
+  </body>
+</html>
+<script>
+  let input = document.querySelector("#input");
+  let timer;
+  input.addEventListener("keyup", function () {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      console.log("searching: ", input.value);
+    }, 2000);
+  });
+</script>
