@@ -102,22 +102,26 @@ function showOrderDetails(tableId) {
   const table = tables.find((table) => table.id === tableId);
 
   const modalBody = document.getElementById("modal-body");
+  modalBody.innerHTML = "";
   Object.keys(table.items).forEach((itemName) => {
     const item = table.items[itemName];
     const itemPrice = item.price; // price
 
+    //displaying data on UI
     modalBody.innerHTML =
       modalBody.innerHTML +
       `
       <div class="order-item">
       <p>${itemName}:
-      <input type="number" value="${item.quantity}" min=0 onchange="updateItemQuantity(${tableId},${itemName},{this.value})"/>
+      <input type="number" value="${item.quantity}" min=0 onchange="updateItemQuantity('${tableId}','${itemName}',this.value)"/>
       x $ ${itemPrice.toFixed(2)}
       </p>
            <button onclick="deleteItem(${tableId},${itemName})">Remove</button>
       </div>
     `;
   }); //[biryani,pizza]
+
+  modalBody.innerHTML += `<h4>Total: $${table.total.toFixed(2)}</h4>`;
   document.querySelector("#order-modal").style.display = "flex";
 }
 
@@ -179,3 +183,29 @@ function addItemtoTable(tableId, itemName, itemPrice) {
 document.querySelector(".close-button").addEventListener("click", () => {
   document.getElementById("order-modal").style.display = "none";
 });
+
+function updateItemQuantity(tableId, itemName, newQuantity) {
+  const table = tables.find((table) => table.id === tableId);
+  const item = table.items[itemName];
+  const oldQuantity = item.quantity;
+  const quantityDifference = newQuantity - oldQuantity;
+  item.quantity = parseInt(newQuantity);
+
+  table.total += quantityDifference * item.price;
+
+  if (item.quantity <= 0) {
+    deleteItem(tableId, itemName);
+  } else {
+    // update UI
+    const tableCard = document.getElementById(tableId);
+    tableCard.querySelector("p").textContent = `
+      Total:$${table.total.toFixed(2)}
+    `;
+
+    tableCard.querySelector("p:nth-of-type(2)").textContent =
+      `Items:${Object.values(table.items).reduce((a, b) => a + b.quantity, 0)}`;
+
+    //update modal
+    showOrderDetails(tableId);
+  }
+}
