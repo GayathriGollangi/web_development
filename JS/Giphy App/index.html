@@ -10,12 +10,16 @@
     <div class="app">
         <h3>Giphy</h3>
         <div class="search-giphy">
-        <input type="text" id="search-input" placeholder="Search Giphy" />
+        <input type="text" id="search-input" oninput="searchClips()" placeholder="Search Giphy" />
         <button onclick="searchGiphy()">
           search <i class="fa fa-search"></i>
         </button>
+        <button id="searchgif" onclick="searchGif()">Search GIF</button>
+        <button id="searchsticker" onclick="searchSticker()">Search Stickers</button>
         <br />
-              <div class="giphy-list"></div>
+                     <div class="giphy-list"></div>
+                     <div class="gif"></div>
+                     <div class="sticker"></div>
 
     </div>
   </body>

@@ -1,5 +1,6 @@
 .app {
   text-align: center;
+  font-family: "Courier New", Courier, monospace;
 }
 input[type="text"] {
   width: 40%;
@@ -22,12 +23,22 @@ button i {
   font-size: 20px;
 }
 
-.giphy-list {
+.giphy-list,
+.gif,
+.sticker {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
-.giphy-list div {
+.giphy-list div,
+.gif div,
+.sticker div {
   margin: 10px;
+}
+
+.giphy-list div,
+.gif div,
+.sticker div:hover {
+  cursor: pointer;
 }
