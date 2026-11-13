@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Movies</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <h1>Movies</h1>
+      <div class="search-movies">
+        <input type="text" id="search-input" placeholder="Search Movie" />
+        <button onclick="searchMovie()">
+          search <i class="fa fa-search"></i>
+        </button>
+        <br />
+      </div>
+      <div class="slide-show"></div>
+      <div class="movies-list"></div>
+    </div>
+  </body>
+</html>
+<script src="./index.js"></script>

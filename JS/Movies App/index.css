@@ -1,0 +1,43 @@
+.app {
+  text-align: center;
+}
+input[type="text"] {
+  width: 40%;
+  height: 50px;
+  border: none;
+  background-color: #f1f1f1;
+  font-size: 20px;
+}
+button {
+  height: 50px;
+  width: 100px;
+  font-size: 20px;
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+}
+
+button i {
+  font-size: 20px;
+}
+.movies-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.movies-list div {
+  padding: 10px;
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.movies-list div img {
+  height: 300px;
+  width: 300px;
+}
+.movies-list div img:hover {
+  height: 400px;
+  width: 400px;
+}
