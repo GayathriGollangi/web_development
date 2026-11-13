@@ -1,5 +1,6 @@
 const API_KEY = "iDMVRtPzFSar22XCH0kRP2m2HYzLhfNg";
 
+//data rendered
 window.addEventListener("DOMContentLoaded", () => {
   fetchGif();
   fetchSticker();
@@ -10,73 +11,62 @@ function searchClips() {
   searchSticker();
 }
 
-// fetch gif
-async function fetchGif() {
+// fetch Data
+async function fetchData(url, selectedContainer) {
   try {
-    let response = await fetch(
-      `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}`,
-    );
+    let response = await fetch(url);
     let data = await response.json();
-    console.log("fetch gif", data.data);
 
-    appendData(data.data, ".giphy-list");
+    console.log(data.data);
+
+    appendData(data.data, selectedContainer);
   } catch (error) {
     console.log(error);
   }
 }
 
+// fetch gif
+async function fetchGif() {
+  fetchData(
+    `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}`,
+    ".giphy-list",
+  );
+}
+
 // fetch sticker
 async function fetchSticker() {
-  try {
-    let response = await fetch(
-      `https://api.giphy.com/v1/stickers/trending?api_key=${API_KEY}`,
-    );
-    let data = await response.json();
-    console.log("fetch stickers", data.data);
-    appendData(data.data, ".giphy-list");
-  } catch (error) {
-    console.log(error);
-  }
+  fetchData(
+    `https://api.giphy.com/v1/stickers/trending?api_key=${API_KEY}`,
+    ".giphy-list",
+  );
 }
 
 // search gif
 async function searchGif() {
   let searchInput = document.querySelector("#search-input").value;
-  console.log(searchInput);
-  try {
-    let response = await fetch(
-      `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${searchInput}`,
-    );
-    let data = await response.json();
-    console.log("search gif", data.data);
-    appendData(data.data, ".gif");
-  } catch (error) {
-    console.log(error);
-  }
+  document.querySelector(".gif").innerHTML = "";
+
+  fetchData(
+    `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${searchInput}`,
+    ".gif",
+  );
 }
 
 //search sticker
 async function searchSticker() {
   let searchInput = document.querySelector("#search-input").value;
+  document.querySelector(".sticker").innerHTML = "";
 
-  try {
-    let response = await fetch(
-      `https://api.giphy.com/v1/stickers/search?api_key=${API_KEY}&q=${searchInput}`,
-    );
-    let data = await response.json();
-    console.log("search stickers", data.data);
-    appendData(data.data, ".sticker");
-  } catch (error) {
-    console.log(error);
-  }
+  fetchData(
+    `https://api.giphy.com/v1/stickers/search?api_key=${API_KEY}&q=${searchInput}`,
+    ".sticker",
+  );
 }
 
 //add data to DOM
 function appendData(data, selectedContainer) {
   let giphyList = document.querySelector(selectedContainer);
-  document.querySelector(".giphy-list").innerHTML = "";
-  document.querySelector(".gif").innerHTML = "";
-  document.querySelector(".sticker").innerHTML = "";
+  //   document.querySelector(".giphy-list").innerHTML = "";
   data.forEach((element) => {
     let divEle = document.createElement("div");
     divEle.className = "giphy-card";
