@@ -20,15 +20,17 @@ async function fetchData(query) {
 }
 
 // Render data to DOM
-function appendData(data) {
+function appendData(array) {
   let videoContainer = document.querySelector(".video-list");
-
-  data.forEach((element) => {
+  //making the container empty
+  videoContainer.innerHTML = "";
+  array.forEach((element) => {
     const {
       snippet,
       id: { videoId },
     } = element;
 
+    //render image data
     let url = snippet.thumbnails.high.url;
     let title = snippet.title;
     let divEle = document.createElement("div");
@@ -41,6 +43,20 @@ function appendData(data) {
 
     divEle.append(imgEle, titleEle);
 
+    const data = {
+      videoId,
+      snippet,
+    };
+    divEle.addEventListener("click", () => {
+      showVideo(data);
+    });
     videoContainer.append(divEle);
   });
+}
+
+function showVideo(data) {
+  //   console.log("clicked");
+  window.location.href = "video.html";
+  //   storing data in localstorage
+  localStorage.setItem("data", JSON.stringify(data));
 }
