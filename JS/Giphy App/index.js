@@ -7,6 +7,9 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function searchClips() {
+  document.querySelector(".gif").innerHTML = "";
+  document.querySelector(".sticker").innerHTML = "";
+
   searchGif();
   searchSticker();
 }
@@ -17,7 +20,7 @@ async function fetchData(url, selectedContainer) {
     let response = await fetch(url);
     let data = await response.json();
 
-    console.log(data.data);
+    // console.log(data.data);
 
     appendData(data.data, selectedContainer);
   } catch (error) {
@@ -44,7 +47,8 @@ async function fetchSticker() {
 // search gif
 async function searchGif() {
   let searchInput = document.querySelector("#search-input").value;
-  document.querySelector(".gif").innerHTML = "";
+  // document.querySelector(".gif").innerHTML = "";
+  console.log("search gif");
 
   fetchData(
     `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${searchInput}`,
@@ -55,7 +59,8 @@ async function searchGif() {
 //search sticker
 async function searchSticker() {
   let searchInput = document.querySelector("#search-input").value;
-  document.querySelector(".sticker").innerHTML = "";
+  console.log("search sticker");
+  // document.querySelector(".sticker").innerHTML = "";
 
   fetchData(
     `https://api.giphy.com/v1/stickers/search?api_key=${API_KEY}&q=${searchInput}`,
@@ -66,7 +71,8 @@ async function searchSticker() {
 //add data to DOM
 function appendData(data, selectedContainer) {
   let giphyList = document.querySelector(selectedContainer);
-  //   document.querySelector(".giphy-list").innerHTML = "";
+  giphyList.innerHTML = "";
+
   data.forEach((element) => {
     let divEle = document.createElement("div");
     divEle.className = "giphy-card";
