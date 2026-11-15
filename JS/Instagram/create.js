@@ -41,31 +41,21 @@ const postData = async (newData) => {
       body: JSON.stringify(newData),
     });
 
-    let result = await response.text();
-
-    console.log("Status:", response.status);
-    console.log("Server response:", result);
-
-    if (!response.ok) {
-      throw new Error("Failed to create post");
-    }
-
     alert("Post created successfully!");
-
-    // Redirect to home page
-    console.log("Redirecting...");
-
-    window.location.replace("./index.html");
   } catch (error) {
     console.log("Error:", error);
   }
 };
 
 //patch update
+// Update specific fields of an existing post
+
 let getPatchData = async () => {
   let patchId = document.getElementById("patch_id").value;
   let patchTitle = document.getElementById("patch_title").value;
   console.log(patchId, patchTitle);
+  // Create an object with updated data
+
   let newData = {
     title: patchTitle,
   };
@@ -79,27 +69,23 @@ let getPatchData = async () => {
     });
 
     alert("updated successfully!");
-
-    // Redirect to home page
-    console.log("Redirecting...");
-
-    // window.location.replace("./index.html");
-    window.location.href = "http://127.0.0.1:5500/index.html";
   } catch (error) {
     console.log("Error:", error);
   }
 };
-
-//put update
+// Replace the entire post data
+// Update an existing post using PUT
 let updateData = async () => {
-  let patchId = document.getElementById("put_id").value;
-  let patchTitle = document.getElementById("put_title").value;
+  let putId = document.getElementById("put_id").value;
+  let putTitle = document.getElementById("put_title").value;
   console.log(patchId, patchTitle);
   let newData = {
-    title: patchTitle,
+    title: putTitle,
   };
+  // Create the updated post object
+
   try {
-    let response = await fetch(`http://localhost:3000/posts/${patchId}`, {
+    let response = await fetch(`http://localhost:3000/posts/${putId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -108,11 +94,22 @@ let updateData = async () => {
     });
 
     console("updated successfully!");
+  } catch (error) {
+    console.log("Error:", error);
+  }
+};
+//delete data
+// Delete an existing post using its ID
 
-    // Redirect to home page
-    console.log("Redirecting...");
+let deleteData = async () => {
+  let deleteId = document.getElementById("delete_id").value;
+  console.log(deleteId);
+  try {
+    let response = await fetch(`http://localhost:3000/posts/${deleteId}`, {
+      method: "DELETE",
+    });
 
-    // window.location.replace("./index.html");
+    console.log("updated successfully!");
     window.location.href = "index.html";
   } catch (error) {
     console.log("Error:", error);
