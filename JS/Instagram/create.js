@@ -60,3 +60,32 @@ const postData = async (newData) => {
     console.log("Error:", error);
   }
 };
+
+//patch update
+let getPatchData = async () => {
+  let patchId = document.getElementById("patch_id").value;
+  let patchTitle = document.getElementById("patch_title").value;
+  console.log(patchId, patchTitle);
+  let newData = {
+    title: patchTitle,
+  };
+  try {
+    let response = await fetch(`http://localhost:3000/posts/${patchId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newData),
+    });
+
+    alert("updated successfully!");
+
+    // Redirect to home page
+    console.log("Redirecting...");
+
+    // window.location.replace("./index.html");
+    window.location.href = "http://127.0.0.1:5500/index.html";
+  } catch (error) {
+    console.log("Error:", error);
+  }
+};
