@@ -11,9 +11,10 @@
       <label>Title:</label>
       <input type="text" id="title" placeholder="enter title" /><br />
       <label>Image:</label>
-      <input type="file" id="image" /><br />
-      <button id="submit_btn">Submit</button>
+      <input type="file" id="image" accept="image/*" />
+
+      <button id="submit_btn" type="button" onclick="getData()">Submit</button>
     </div>
+    <script src="./create.js"></script>
   </body>
 </html>
-<script src="./index.js"></script>
