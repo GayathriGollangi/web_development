@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a Lilly",
+      "images": "https://cdn.pixabay.com/photo/2026/07/18/06/54/06-54-38-863_1280.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Flower title",
+      "images": "https://cdn.pixabay.com/photo/2021/04/19/10/13/the-see-super-maximum-6191051_1280.jpg"
+    }
+  ]
+}

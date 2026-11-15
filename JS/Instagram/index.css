@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  width: 100%;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+#post div {
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #2d2828;
+  border-radius: 10px;
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+#post div img {
+  height: 250px;
+  width: 100%;
+}
