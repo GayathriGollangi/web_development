@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -68,4 +68,108 @@ body {
 #submit_btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(193, 53, 132, 0.3);
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f5f9;
+  padding: 30px;
+  color: #252525;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 21px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.12);
+}
+
+input[type="file"] {
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 7px;
+  background-color: #6c63ff;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #5148d8;
+  transform: translateY(-2px);
+}
+
+#delete_container button {
+  background-color: #e74c3c;
+}
+
+#delete_container button:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 650px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
 }
