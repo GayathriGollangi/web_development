@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+  </head>
+  <body>
+    <form>
+      <label>username</label>
+      <input type="text" id="username" placeholder="enter ur username" /><br />
+      <label for="email">Enter your email:</label>
+
+      <input
+        type="email"
+        id="email"
+        size="30"
+        <!-- required -->
+      /><br />
+
+      <label for="password">Password (8 characters minimum):</label>
+      <input type="password" id="password" minlength="8"  />
+
+      <div>
+        <button id="register">Register</button>
+        <a href="./signin.html"><button>SignIn</button></a>
+      </div>
+    </form>
+  </body>
+</html>
