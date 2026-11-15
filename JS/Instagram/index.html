@@ -5,19 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Instagram</title>
     <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
   </head>
+
   <body>
     <div class="container">
-      <div class="navbar">
+      <nav class="navbar">
         <div id="logo">
-          <img src="./logo.png" alt="logo" />
+          <img src="./logo.png" alt="Instagram" />
         </div>
+
         <div id="options">
-          <a href="create.html"><button>Create Post</button></a>
+          <a href="create.html">
+            <button><i class="fa-solid fa-plus"></i> Create Post</button>
+          </a>
         </div>
-      </div>
-      <div id="post"></div>
+      </nav>
+
+      <main>
+        <div id="post"></div>
+      </main>
     </div>
+
+    <script src="./index.js"></script>
   </body>
 </html>
 <script src="./index.js"></script>
