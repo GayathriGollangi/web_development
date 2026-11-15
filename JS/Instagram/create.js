@@ -89,3 +89,32 @@ let getPatchData = async () => {
     console.log("Error:", error);
   }
 };
+
+//put update
+let updateData = async () => {
+  let patchId = document.getElementById("put_id").value;
+  let patchTitle = document.getElementById("put_title").value;
+  console.log(patchId, patchTitle);
+  let newData = {
+    title: patchTitle,
+  };
+  try {
+    let response = await fetch(`http://localhost:3000/posts/${patchId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newData),
+    });
+
+    console("updated successfully!");
+
+    // Redirect to home page
+    console.log("Redirecting...");
+
+    // window.location.replace("./index.html");
+    window.location.href = "index.html";
+  } catch (error) {
+    console.log("Error:", error);
+  }
+};
