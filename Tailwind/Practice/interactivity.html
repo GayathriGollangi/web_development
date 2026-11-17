@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactivity</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body>
+    <!-- hover styling -->
+    <button type="button" class="bg-black text-white hover:bg-red-500">
+      submit
+    </button>
+    <!-- active state styling -->
+    <button type="button" class="bg-black text-white focus:bg-red-500">
+      submit
+    </button>
+    <!-- Pseudo classes -->
+    <ul>
+      <li class="even:bg-green-500 odd:bg-cyan-500">hello</li>
+      <li class="even:bg-green-500 odd:bg-cyan-500">hello</li>
+      <li class="even:bg-green-500 odd:bg-cyan-500">hello</li>
+      <li class="even:bg-green-500 odd:bg-cyan-500">hello</li>
+    </ul>
+    <!-- User select -->
+    <div class="select-none">Hello</div>
+    <div class="select-text">
+      Hello
+      <p>Hi</p>
+    </div>
+    <div class="select-all">Hello</div>
+    <div class="select-auto">Hello</div>
+  </body>
+</html>
