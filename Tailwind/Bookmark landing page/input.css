@@ -7,4 +7,10 @@
     @apply text-grayishBlue;
     @apply text-xl;
   }
+  h3 {
+    @apply text-xl;
+  }
+  button {
+    @apply text-slate-200;
+  }
 }
