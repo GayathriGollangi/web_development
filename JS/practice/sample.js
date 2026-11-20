@@ -11,3 +11,5 @@ let aop = a();
 let bop = aop();
 let cop = bop();
 console.log(cop);
+
+console.log(a()()());
