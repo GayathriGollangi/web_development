@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>capturing</title>
+  </head>
+  <body>
+    <div id="parent">
+      parent
+      <button id="child">child</button>
+    </div>
+  </body>
+</html>
+<script>
+  document.getElementById("parent").addEventListener(
+    "click",
+    function () {
+      console.log("parent");
+    },
+    true, //capturing : true
+  );
+  document.getElementById("child").addEventListener("click", function () {
+    console.log("child");
+  });
+</script>
