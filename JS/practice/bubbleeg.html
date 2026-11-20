@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubbling</title>
+    <style>
+      li.completed {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="todo">
+      <li>task1</li>
+      <li>task2</li>
+    </ul>
+  </body>
+</html>
+<script>
+  document.getElementById("todo").addEventListener("click", function (e) {
+    if (e.target.tagName === "LI") {
+      e.target.classList.toggle("completed");
+    }
+  });
+</script>
