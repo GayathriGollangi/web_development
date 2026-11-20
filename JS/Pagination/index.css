@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+h4 {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-size: 30px;
+}
+.container {
+  text-align: center;
+}
+.card-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-item: center;
+}
+
+.card {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+}

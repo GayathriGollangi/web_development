@@ -37,8 +37,10 @@ function appendCard(element) {
 
   card.setAttribute("data-id", userId);
   const cardTitle = document.createElement("h3");
+  cardTitle.classList.add("card-title");
   cardTitle.innerText = title;
   const cardBody = document.createElement("p");
+  cardBody.classList.add("card-description");
   cardBody.innerText = body;
   card.append(cardTitle, cardBody);
   return card;
