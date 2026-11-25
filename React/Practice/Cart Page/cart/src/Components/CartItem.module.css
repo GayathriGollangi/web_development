@@ -1,0 +1,14 @@
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background-color: #f9fafb;
+  transition: box-shadow 0.3s ease;
+}
+
+.cartItem:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}

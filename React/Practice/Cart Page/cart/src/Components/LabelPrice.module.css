@@ -1,0 +1,19 @@
+.labelPrice {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+.price {
+  font-size: 15px;
+  color: #16a34a;
+  font-weight: 500;
+  margin: 0;
+}
