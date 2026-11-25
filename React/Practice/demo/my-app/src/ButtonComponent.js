@@ -1,7 +1,10 @@
-export default function ButtonComponent() {
+export default function ButtonComponent(props) {
+  const { buttonText, backgroundCol } = props;
   return (
     <div>
-      <button>click here</button>
+      <button style={{ backgroundColor: backgroundCol, width: "100px" }}>
+        {buttonText}
+      </button>
     </div>
   );
 }

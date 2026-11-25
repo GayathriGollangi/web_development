@@ -7,7 +7,9 @@ function App() {
     <div className="App">
       <h1>Hello</h1>
       <FirstComponent />
-      <ButtonComponent />
+      <ButtonComponent buttonText="Try this!" backgroundCol="green" />
+      <ButtonComponent buttonText="login!" backgroundCol="blue" />
+      <ButtonComponent buttonText="logout!" backgroundCol="yellow" />
     </div>
   );
 }
