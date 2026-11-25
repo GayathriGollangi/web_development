@@ -1,12 +1,14 @@
 import React from "react";
 
-const TodoList = ({ todo }) => {
+const TodoList = ({ todo, handleToggle }) => {
   return (
     <div>
       {todo.map((item) => {
+        const { title, status, id } = item;
         return (
-          <li key={item.id}>
-            {item.title} - {item.status ? "Completed" : "Not completed"}
+          <li key={id}>
+            {title} - {status ? "Completed" : "Not completed"}
+            <button onClick={() => handleToggle(id)}>Toggle</button>
           </li>
         );
       })}
