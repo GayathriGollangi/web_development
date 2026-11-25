@@ -1,0 +1,39 @@
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  margin-bottom: 12px;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  color: #222;
+}
+
+.completed {
+  color: #16a34a;
+  text-decoration: line-through;
+}
+
+.status {
+  font-size: 14px;
+  color: #64748b;
+  margin-left: 5px;
+}
+
+.button {
+  padding: 8px 14px;
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #15803d;
+}

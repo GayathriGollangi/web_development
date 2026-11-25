@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";
+import styles from "./Todo.module.css";
 
 const Todo = () => {
   const [text, setText] = useState("");
@@ -36,8 +37,8 @@ const Todo = () => {
     setTodo(todoAfterUpdate);
   };
   return (
-    <div>
-      <h1>Todo App</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Todo App</h1>
       <div>
         <AddTodo
           text={text}
