@@ -5,11 +5,17 @@ import viteLogo from "./assets/vite.svg";
 import "./App.css";
 import List from "./List";
 import data from "./data";
+import Counter from "./Counter/Counter";
 
 function App() {
   // console.log(data);
 
-  return <>{<List data={data} />}</>;
+  return (
+    <>
+      <Counter />
+      {<List data={data} />}
+    </>
+  );
 }
 
 export default App;

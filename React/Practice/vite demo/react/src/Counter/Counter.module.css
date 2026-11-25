@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+}
+
+.count {
+  font-size: 50px;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 25px;
+}
+
+.inc {
+  background-color: #16a34a;
+}
+
+.dec {
+  background-color: #dc2626;
+}
+
+.inc:hover {
+  background-color: #15803d;
+}
+
+.dec:hover {
+  background-color: #b91c1c;
+}
