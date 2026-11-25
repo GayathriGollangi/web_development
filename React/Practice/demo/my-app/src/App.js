@@ -1,6 +1,7 @@
 import "./App.css";
 import { Authentication } from "./Authentication";
 import ButtonComponent from "./ButtonComponent";
+import Demo from "./demo/Demo";
 import { FirstComponent } from "./FirstComponent";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         click={yellowButton}
       />
       <Authentication />
+      <Demo />
     </div>
   );
 }
