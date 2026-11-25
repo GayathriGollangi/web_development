@@ -1,0 +1,13 @@
+.total {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 25px;
+  padding: 18px;
+  border-top: 2px solid #e5e7eb;
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  background-color: #f9fafb;
+  border-radius: 8px;
+}
