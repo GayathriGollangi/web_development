@@ -1,0 +1,30 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "Complete JavaScript basics",
+      "status": false
+    },
+    {
+      "id": "2",
+      "title": "Learn React components",
+      "status": true
+    },
+    {
+      "id": "3",
+      "title": "Build a Todo application",
+      "status": false
+    },
+    {
+      "id": "4",
+      "title": "Practice CRUD operations",
+      "status": false
+    },
+    {
+      "title": "crud",
+      "status": true,
+      "id": "UilEny-MqSQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
