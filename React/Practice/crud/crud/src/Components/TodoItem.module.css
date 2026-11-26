@@ -1,0 +1,52 @@
+.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  list-style: none;
+}
+
+.title {
+  flex: 1;
+  font-size: 16px;
+  color: #334155;
+}
+
+.completed {
+  color: #16a34a;
+  text-decoration: line-through;
+}
+
+.pending {
+  color: #64748b;
+}
+
+button {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+}
+
+.deleteBtn {
+  background-color: #ef4444;
+}
+
+.deleteBtn:hover {
+  background-color: #dc2626;
+}
+
+.toggleBtn {
+  background-color: #2563eb;
+}
+
+.toggleBtn:hover {
+  background-color: #1d4ed8;
+}

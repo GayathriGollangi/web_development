@@ -8,7 +8,7 @@
     {
       "id": "2",
       "title": "Learn React components",
-      "status": true
+      "status": false
     },
     {
       "id": "3",
@@ -19,11 +19,6 @@
       "id": "4",
       "title": "Practice CRUD operations",
       "status": false
-    },
-    {
-      "title": "crud",
-      "status": true,
-      "id": "UilEny-MqSQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
