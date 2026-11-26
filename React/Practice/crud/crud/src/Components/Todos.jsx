@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AddTodo from "./AddTodo";
 import TodoItem from "./TodoItem";
+import styles from "./Todos.module.css";
 const Todos = () => {
   const [inputVal, setInputVal] = useState("");
   const [data, setData] = useState([]);
@@ -95,26 +96,30 @@ const Todos = () => {
       console.log(error);
     }
   };
+
   return (
-    <div>
-      Todos
-      <div>
-        <AddTodo
-          handleChange={handleChange}
-          handleAdd={handleAdd}
-          inputVal={inputVal}
-        />
-      </div>
-      <ul>
-        {data.map((item) => {
-          return (
+    <div className={styles.todosContainer}>
+      <h2 className={styles.heading}>My Todos</h2>
+
+      <AddTodo
+        handleChange={handleChange}
+        handleAdd={handleAdd}
+        inputVal={inputVal}
+      />
+
+      <ul className={styles.todoList}>
+        {data.length === 0 ? (
+          <p className={styles.emptyMessage}>No todos available</p>
+        ) : (
+          data.map((item) => (
             <TodoItem
+              key={item.id}
               item={item}
               handleToggle={handleToggle}
               handleDelete={handleDelete}
             />
-          );
-        })}
+          ))
+        )}
       </ul>
     </div>
   );

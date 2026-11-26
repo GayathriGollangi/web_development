@@ -1,0 +1,40 @@
+.todosContainer {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.heading {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 25px;
+}
+
+.todoList {
+  padding: 0;
+  margin-top: 20px;
+  list-style: none;
+}
+
+.emptyMessage {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .todosContainer {
+    margin: 20px 12px;
+    padding: 18px;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+}
